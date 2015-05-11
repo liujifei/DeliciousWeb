@@ -1,6 +1,7 @@
 package com.delicious.controller;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,10 @@ public class SignInController {
 	    System.out.println("paswd:"+user.getPassword());
 	    signInService.signIn(user);
 	    return "success";
+	  }
+
+	  public User getLoginUser(HttpServletRequest request){
+		  return (User) request.getAttribute("signUser");
 	  }
 	  public SignInService getSignInService() {
 	    return signInService;
