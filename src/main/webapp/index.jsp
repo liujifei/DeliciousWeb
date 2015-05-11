@@ -16,7 +16,7 @@
   <script src="js/vendor/custom.modernizr.js"></script>
 </head>
 <body>
-	<form method="post" action="<%=request.getContextPath() %>/book.do?method=add">
+	<form method="post" action="<%=request.getContextPath() %>/book?method=add">
 	bookname:<input type="text" name="name" id="name">
 	author:<input type="text" name="author" id="author">
 	<input type="submit" value="Add">
