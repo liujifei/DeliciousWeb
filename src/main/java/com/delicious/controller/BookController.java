@@ -9,15 +9,15 @@ import com.delicious.model.Book;
 import com.delicious.service.BookService;
 
 @Controller
-@RequestMapping("/book.do")
+@RequestMapping("/book")
 public class BookController {
 	  private BookService bookService;
 	  @RequestMapping(params = "method=add")
-	  public void add(Book book){
+	  public String add(Book book){
 	    System.out.println("bookname:"+book.getName());
 	    System.out.println("author:"+book.getAuthor());
 	    bookService.add(book);
-//	    return "success";
+	    return "success";
 	  }
 	  @RequestMapping(params = "method=update")
 	  public String update(Book book) {
